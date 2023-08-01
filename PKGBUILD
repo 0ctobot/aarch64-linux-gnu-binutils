@@ -3,7 +3,7 @@
 _target=aarch64-linux-gnu
 pkgname=$_target-binutils
 pkgver=2.41
-pkgrel=1
+pkgrel=2
 pkgdesc='A set of programs to assemble and manipulate binary and object files for the ARM64 target'
 arch=(x86_64)
 url='https://www.gnu.org/software/binutils/'
@@ -62,6 +62,7 @@ package() {
   rm "$pkgdir"/usr/share/man/man1/$_target-{dlltool,windres,windmc}*
   rm "$pkgdir"/usr/lib/bfd-plugins/libdep.so
   rm "$pkgdir"/usr/etc/gprofng.rc
+  rm "$pkgdir"/usr/lib/libgprofng.a
   rm -r "$pkgdir"/usr/include
   rm -r "$pkgdir"/usr/lib/gprofng/
 
