@@ -63,6 +63,7 @@ package() {
   rm "$pkgdir"/usr/lib/bfd-plugins/libdep.so
   rm "$pkgdir"/usr/etc/gprofng.rc
   rm "$pkgdir"/usr/lib/libgprofng.a
+  rm -r "$pkgdir"/usr/etc
   rm -r "$pkgdir"/usr/include
   rm -r "$pkgdir"/usr/lib/gprofng/
 
