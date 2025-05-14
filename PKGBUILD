@@ -40,7 +40,8 @@ build() {
               --enable-ld=default \
               $enable_gold \
               --enable-plugins \
-              --enable-deterministic-archives
+              --enable-deterministic-archives \
+              --enable-new-dtags
 
   make
 }
