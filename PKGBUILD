@@ -3,7 +3,7 @@
 _target=aarch64-linux-gnu
 pkgname=$_target-binutils
 pkgver=2.44
-pkgrel=1
+pkgrel=2
 pkgdesc='A set of programs to assemble and manipulate binary and object files for the ARM64 target'
 arch=(x86_64)
 url='https://www.gnu.org/software/binutils/'
@@ -24,21 +24,16 @@ prepare() {
 build() {
   cd binutils-$pkgver
 
-  if [ "${CARCH}" != "i686" ];
-  then
-    # enabling gold linker at i686 makes the install fail
-    enable_gold='--enable-gold'
-  fi
-
   ./configure --target=$_target \
               --with-sysroot=/usr/$_target \
               --prefix=/usr \
+              --disable-gprofng \
               --disable-multilib \
               --with-gnu-as \
               --with-gnu-ld \
               --disable-nls \
+              --enable-gold \
               --enable-ld=default \
-              $enable_gold \
               --enable-plugins \
               --enable-deterministic-archives \
               --enable-new-dtags
@@ -62,11 +57,6 @@ package() {
   # Remove file conflicting with host binutils and manpages for MS Windows tools
   rm "$pkgdir"/usr/share/man/man1/$_target-{dlltool,windres,windmc}*
   rm "$pkgdir"/usr/lib/bfd-plugins/libdep.so
-  rm "$pkgdir"/usr/etc/gprofng.rc
-  rm "$pkgdir"/usr/lib/libgprofng.a
-  rm -r "$pkgdir"/usr/etc
-  rm -r "$pkgdir"/usr/include
-  rm -r "$pkgdir"/usr/lib/gprofng/
 
   # Remove info documents that conflict with host version
   rm -r "$pkgdir"/usr/share/info
