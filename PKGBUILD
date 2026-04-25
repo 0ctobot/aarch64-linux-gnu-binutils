@@ -4,7 +4,7 @@ _target=aarch64-linux-gnu
 pkgname=$_target-binutils
 pkgver=2.46
 _pkgver="${pkgver}.0"
-pkgrel=1
+pkgrel=2
 pkgdesc='A set of programs to assemble and manipulate binary and object files for the ARM64 target'
 arch=(x86_64)
 url='https://www.gnu.org/software/binutils/'
@@ -20,12 +20,13 @@ validpgpkeys=('3A24BC1E8FB409FA9F14371813FCEF89DD9E3C4F') # Nick Clifton (Chief 
 prepare() {
   cd binutils-$_pkgver
   sed -i "/ac_cpp=/s/\$CPPFLAGS/\$CPPFLAGS -O2/" libiberty/configure
+  # Turn off development mode (-Werror, gas run-time checks, date in sonames)
+  sed -i '/^development=/s/true/false/' bfd/development.sh
+
 }
 
 build() {
   cd binutils-$_pkgver
-
-  export CFLAGS+=" -Wno-error"
 
   ./configure --target=$_target \
               --with-sysroot=/usr/$_target \
