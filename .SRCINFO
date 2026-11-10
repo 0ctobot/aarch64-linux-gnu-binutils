@@ -1,19 +1,16 @@
-pkgbase = aarch64-linux-gnu-binutils
-	pkgdesc = A set of programs to assemble and manipulate binary and object files for the ARM64 target
-	pkgver = 2.47
+pkgbase = aarch64-linux-gnu-binutils-trunk
+	pkgdesc = A set of programs to assemble and manipulate binary and object files for the ARM64 target (binutils trunk)
+	pkgver = 2.47.50.r20261110.g892d9814
 	pkgrel = 1
-	url = https://www.gnu.org/software/binutils/
+	url = https://sourceware.org/binutils/
 	arch = x86_64
 	license = GPL
 	depends = zlib
 	depends = libelf
-	source = https://ftpmirror.gnu.org/gnu/binutils/binutils-2.47.tar.bz2
-	source = https://ftpmirror.gnu.org/gnu/binutils/binutils-2.47.tar.bz2.sig
-	validpgpkeys = 3A24BC1E8FB409FA9F14371813FCEF89DD9E3C4F
-	validpgpkeys = 5EF3A41171BB77E6110ED2D01F3D03348DB1A3E2
-	sha1sums = 5b1deae7fe38d8334d3df4cbded074e86032a21d
-	sha1sums = SKIP
-	sha256sums = 3068128c75cda9f898ccb4211d360246e8e195ffcc9dfb655b23ae23a54800e8
-	sha256sums = SKIP
+	depends = zstd
+	provides = aarch64-linux-gnu-binutils=2.47.50
+	conflicts = aarch64-linux-gnu-binutils
+	source = binutils-trunk-892d9814.tar.zst
+	sha256sums = ee6d7ea5a5eeea9a1c957d4442d63f8d170936c52757a6b009e24adacf4cfd4d
 
-pkgname = aarch64-linux-gnu-binutils
+pkgname = aarch64-linux-gnu-binutils-trunk
