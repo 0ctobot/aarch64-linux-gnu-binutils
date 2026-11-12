@@ -1,6 +1,6 @@
 pkgbase = aarch64-linux-gnu-binutils-trunk
 	pkgdesc = A set of programs to assemble and manipulate binary and object files for the ARM64 target (binutils trunk)
-	pkgver = 2.47.50.r20261110.g892d9814
+	pkgver = 2.47.50.r20261112.gc79376a2
 	pkgrel = 1
 	url = https://sourceware.org/binutils/
 	arch = x86_64
@@ -10,7 +10,7 @@ pkgbase = aarch64-linux-gnu-binutils-trunk
 	depends = zstd
 	provides = aarch64-linux-gnu-binutils=2.47.50
 	conflicts = aarch64-linux-gnu-binutils
-	source = binutils-trunk-892d9814.tar.zst
-	sha256sums = ee6d7ea5a5eeea9a1c957d4442d63f8d170936c52757a6b009e24adacf4cfd4d
+	source = binutils-trunk-c79376a2.tar.zst
+	sha256sums = af532d987cec8938543f04ed4bd69fe1cc0de048dd503df0ed746f91a7b66f8e
 
 pkgname = aarch64-linux-gnu-binutils-trunk
