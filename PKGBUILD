@@ -11,9 +11,9 @@
 
 _target=aarch64-linux-gnu
 pkgname=$_target-binutils-trunk
-_commit=f318ccd4761fb960a9584a404be3c61e5405f077
+_commit=a6e2cf3422fbe0607e37dbcec0c6074862b8a337
 _basever=2.47.50
-_datestamp=20261117
+_datestamp=20261125
 pkgver=$_basever.r$_datestamp.g${_commit:0:8}
 _pkgver="${pkgver}"
 pkgrel=1
@@ -25,7 +25,7 @@ depends=(zlib libelf zstd)
 provides=("$_target-binutils=$_basever")
 conflicts=($_target-binutils)
 source=(binutils-trunk-${_commit:0:8}.tar.zst)
-sha256sums=('bb3de165a590f5c2a5c87cdca975393969f6d03dcf0102ae81cf3d618dfdbcf2')
+sha256sums=('2c9eab1ac3de25da459c6f71e7bcc637f160181cfaa2340992a3962ec559eab8')
 
 _basedir=binutils-trunk-${_commit:0:8}
 _hostcc=$HOME/toolchains/gcc-17-host
